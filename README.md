@@ -1,4 +1,4 @@
-# CleanArchitectureTraining
+# Clean Architecture Project
 
 - Developing a 3 Tier Architecture From The Scratch Project
 - Clean Architecture(CA) Project Structure
