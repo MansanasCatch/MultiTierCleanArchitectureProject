@@ -1,5 +1,7 @@
 # Clean Architecture Project
 
+![Project_Structure](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/ff6fbf3c-8297-46ff-bdce-e25f5bcb5698)
+
 - Developing a 3 Tier Architecture From The Scratch Project
 - Clean Architecture(CA) Project Structure
 - Dependency Injection
