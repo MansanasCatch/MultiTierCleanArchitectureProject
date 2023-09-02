@@ -15,7 +15,7 @@
     },
     Claims: {
       Name: null,
-      Role: null
+      Role: null 
     },
     Roles: {
       Admin: "Admin",
