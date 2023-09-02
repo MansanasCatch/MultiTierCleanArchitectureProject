@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.151" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Account\Validator\" />
+    <Folder Include="Category\Validator\" />
+    <Folder Include="Inventory\Validator\" />
+    <Folder Include="Item\Validator\" />
+    <Folder Include="Role\Validator\" />
+    <Folder Include="User\Validator\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PracticeInventory.Core\PracticeInventory.Core.csproj" />
+    <ProjectReference Include="..\PracticeInventory.Domain\PracticeInventory.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,164 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="login-title">Login</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 login-form">
+            <div class="form-group">
+              <label for="txtUsername">Username</label>
+              <input type="text" class="form-control" id="txtUsername" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="txtPassword">Password</label>
+              <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="col-12 login-details d-none">
+            <p><b>Name: </b><span class="current-user"></span></p>
+            <p><b>Role: </b><span class="current-user-role"></span></p>
+          </div>
+          <div class="col-12 my-2 text-right">
+            <button type="button" id="btnLogin" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-2 register-form">
+      <div class="card-header">
+       <h4>Register</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="form-label">Role</label>
+              <select id="ddRole" class="form-control">
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="txtRegisterUsername">Username</label>
+              <input type="text" class="form-control" id="txtRegisterUsername" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="txtRegisterEmail">Email</label>
+              <input type="email" class="form-control" id="txtRegisterEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="txtRegisterPassword">Password</label>
+              <input type="password" class="form-control" id="txtRegisterPassword" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+              <label for="txtRegisterPhoneNumber">PhoneNumber</label>
+              <input type="text" class="form-control" id="txtRegisterPhoneNumber" placeholder="Enter phone numeber">
+            </div>
+          </div>
+          <div class="col-12 my-2 text-right">
+            <button type="button" id="btnRegister" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="user-container card mb-2 d-none">
+      <div class="card-header">
+        <h4>Manage Users</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 text-right">
+            <button id="btnAddUser" type="button" class="btn btn-primary">New User</button>
+          </div>
+          <div class="col-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-users">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-container card d-none">
+      <div class="card-header">
+        <h4>Manage Inventory</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 text-right">
+            <button id="" type="button" class="btn btn-primary">New Item</button>
+          </div>
+          <div class="col-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                  <th>Cost</th>
+                  <th>SalePrice</th>
+                  <th>CurrentQuantity</th>
+                  <th>CriticalQuantity</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="manageUserModal" role="dialog" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="form-label">Role</label>
+                            <select id="ddManageRole" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtManageUsername">Username</label>
+                            <input type="text" class="form-control" id="txtManageUsername" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtManageEmail">Email</label>
+                            <input type="email" class="form-control" id="txtManageEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtManagePassword">Password</label>
+                            <input type="password" class="form-control" id="txtManagePassword" placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtManagePhoneNumber">PhoneNumber</label>
+                            <input type="text" class="form-control" id="txtManagePhoneNumber" placeholder="Enter phone numeber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Cancel</button>
+                <button id="btnSaveUser" type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
