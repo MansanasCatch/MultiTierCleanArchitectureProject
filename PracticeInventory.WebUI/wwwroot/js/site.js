@@ -109,37 +109,39 @@
       ValidateForm: function (IsValid, isRefreshPage, oResult) {
         var claims = scriptBaseConfig.Claims;
         var defaultRole = scriptBaseConfig.Roles;
-        if (IsValid && isRefreshPage) {
-          claims.Name = oResult.userName
-          claims.Role = oResult.roleName
-          $("#btnLogin").text("Logout")
-          $(".login-title").text("Current User")
-          $(".current-user").text(claims.Name);
-          $(".current-user-role").text(claims.Role);
-          $(".login-details").removeClass("d-none")
-          $(".login-form").addClass("d-none")
-          $(".register-form").addClass("d-none")
-          if (claims.Role == defaultRole.Admin) {
-            $(".user-container").removeClass("d-none")
-            $(".inventory-container").addClass("d-none")
-            scriptManager.ClientRequest.GetRoles();
-            scriptManager.ClientRequest.GetUsers();
-          } else if (claims.Role == defaultRole.RegularUser) {
+        if (isRefreshPage) {
+          if (IsValid) {
+            claims.Name = oResult.userName
+            claims.Role = oResult.roleName
+            $("#btnLogin").text("Logout")
+            $(".login-title").text("Current User")
+            $(".current-user").text(claims.Name);
+            $(".current-user-role").text(claims.Role);
+            $(".login-details").removeClass("d-none")
+            $(".login-form").addClass("d-none")
+            $(".register-form").addClass("d-none")
+            if (claims.Role == defaultRole.Admin) {
+              $(".user-container").removeClass("d-none")
+              $(".inventory-container").addClass("d-none")
+              scriptManager.ClientRequest.GetRoles();
+              scriptManager.ClientRequest.GetUsers();
+            } else if (claims.Role == defaultRole.RegularUser) {
+              $(".user-container").addClass("d-none")
+              $(".inventory-container").removeClass("d-none")
+            }
+          } else {
+            claims.Name = null;
+            claims.Role = null
+            $("#btnLogin").text("Submit")
+            $(".login-title").text("Login")
+            $(".current-user").text("");
+            $(".current-user-role").text("");
+            $(".login-details").addClass("d-none")
+            $(".login-form").removeClass("d-none")
+            $(".register-form").removeClass("d-none")
             $(".user-container").addClass("d-none")
-            $(".inventory-container").removeClass("d-none")
-          } 
-        } else {
-          claims.Name = null;
-          claims.Role = null
-          $("#btnLogin").text("Submit")
-          $(".login-title").text("Login")
-          $(".current-user").text("");
-          $(".current-user-role").text("");
-          $(".login-details").addClass("d-none")
-          $(".login-form").removeClass("d-none")
-          $(".register-form").removeClass("d-none")
-          $(".user-container").addClass("d-none")
-          $(".inventory-container").addClass("d-none")
+            $(".inventory-container").addClass("d-none")
+          }
         }
       },
       ClearRegistrationForm: function () {
