@@ -140,6 +140,7 @@
           $(".register-form").removeClass("d-none")
           $(".user-container").addClass("d-none")
           $(".inventory-container").addClass("d-none")
+          $(scriptBaseConfig.Holder.Modals.manageUserModal).modal("hide")
         }
       },
       ClearRegistrationForm: function () {
