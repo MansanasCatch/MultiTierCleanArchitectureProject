@@ -5,9 +5,9 @@
 ![Project_Structure](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/ff6fbf3c-8297-46ff-bdce-e25f5bcb5698)
 
 [Prerequisite]
-1.) Visual Studio 2022
-2.) MSSQL 2016 - 2019
-3.) .NET Core 7
+- Visual Studio 2022
+- MSSQL 2016 - 2019
+- .NET Core 7
 
 
   [Learnings]
