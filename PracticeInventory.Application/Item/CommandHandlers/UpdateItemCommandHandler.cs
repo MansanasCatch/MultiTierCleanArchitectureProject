@@ -15,14 +15,22 @@ public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand, Resul
     }
     public async Task<Result<Guid>> Handle(UpdateItemCommand request, CancellationToken cancellationToken)
     {
+        var isItemExist = _unitOfWork.ItemRepository.FindQueryable(x => x.ItemName == request.ItemName);
+        if (isItemExist is not null)
+        {
+            return Result<Guid>.Failure("Item Name is already exist.");
+        }
+
         var findItem = await _unitOfWork.ItemRepository.GetByIdAsync(request.ItemId);
+        if (findItem is null)
+        {
+            return Result<Guid>.Failure("ItemId is not exist.");
+        }
 
         findItem.CategoryId = request.CategoryId;
         findItem.ItemName = request.ItemName;
 
-        var result = await _unitOfWork.CompleteAsync() > 0;
-
-        if (!result) return Result<Guid>.Failure("Failed to update item.");
+        await _unitOfWork.CompleteAsync();
 
         return Result<Guid>.Success(findItem.ItemId);
     }

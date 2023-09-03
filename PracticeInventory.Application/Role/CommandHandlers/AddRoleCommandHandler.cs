@@ -20,17 +20,17 @@ public class AddRoleCommandHandler : IRequestHandler<AddRoleCommand, Result<Unit
     public async Task<Result<Unit>> Handle(AddRoleCommand request, CancellationToken cancellationToken)
     {
         var isRoleExist = await _roleManager.RoleExistsAsync(request.RoleName);
-        if (!isRoleExist)
+        if (isRoleExist)
         {
-            var role = new IdentityRole();
-            role.Name = request.RoleName;
-            role.NormalizedName = request.RoleName.ToUpper();
-
-            await _roleManager.CreateAsync(role);
-
-            return Result<Unit>.Success(Unit.Value);
+            return Result<Unit>.Failure("Role is already exist.");
         }
 
-        return Result<Unit>.Failure("Role is already exist.");
+        var role = new IdentityRole();
+        role.Name = request.RoleName;
+        role.NormalizedName = request.RoleName.ToUpper();
+
+        await _roleManager.CreateAsync(role);
+
+        return Result<Unit>.Success(Unit.Value);
     }
 }

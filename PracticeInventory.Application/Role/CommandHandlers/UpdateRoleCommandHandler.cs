@@ -17,7 +17,6 @@ public class UpdateRoleCommandHandler : IRequestHandler<UpdateRoleCommand, Resul
     public async Task<Result<Unit>> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
     {
         var findRole = await _roleManager.FindByIdAsync(request.RoleId);
-
         if(findRole is null)
         {
             return Result<Unit>.Failure("Role is not exist.");

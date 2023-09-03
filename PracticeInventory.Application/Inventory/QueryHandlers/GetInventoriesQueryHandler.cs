@@ -17,7 +17,6 @@ public class GetInventoriesQueryHandler : IRequestHandler<GetInventoriesQuery, R
 
     public async Task<Result<IEnumerable<InventoryDTO>>> Handle(GetInventoriesQuery request, CancellationToken cancellationToken)
     {
-        //_logger.LogInformation("Starting to do slow work");
         using var connection = _sqlConnectionFactory.Create();
         const string sql = @"SELECT inv.InventoryId,
 	                           items.ItemId,

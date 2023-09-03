@@ -17,7 +17,13 @@ public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryComman
 
     public async Task<Result<Unit>> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
     {
-        await _unitOfWork.CategoryRepository.FindQueryable(x => x.CategoryId == request.CategoryId).ExecuteDeleteAsync();
+        var isCategoryExist = _unitOfWork.CategoryRepository.FindQueryable(x => x.CategoryId == request.CategoryId);
+        if (isCategoryExist is null)
+        {
+            return Result<Unit>.Failure("CategoryId is not exist.");
+        }
+
+        await isCategoryExist.ExecuteDeleteAsync();
 
         return Result<Unit>.Success(Unit.Value);
     }

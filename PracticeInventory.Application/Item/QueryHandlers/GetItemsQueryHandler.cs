@@ -16,6 +16,8 @@ public class GetItemsQueryHandler : IRequestHandler<GetItemsQuery, Result<IEnume
     }
     public async Task<Result<IEnumerable<ItemDTO>>> Handle(GetItemsQuery request, CancellationToken cancellationToken)
     {
+        //THIS IS NOT A BEST PRACTICE THIS IS A SAMPLE OF MANUAL MAPPING
+        //USE DAPPER IMPLEMENTATION like in GetInventoriesQueryHandler
         var items = _unitOfWork.ItemRepository.GetItems().Result.ToList();
         foreach (var item in items)
         {

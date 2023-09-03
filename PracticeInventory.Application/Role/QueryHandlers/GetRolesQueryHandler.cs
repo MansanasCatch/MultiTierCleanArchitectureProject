@@ -16,6 +16,8 @@ public class GetRolesQueryHandler : IRequestHandler<GetRolesQuery, Result<IEnume
 
     public async Task<Result<IEnumerable<RoleDTO>>> Handle(GetRolesQuery request, CancellationToken cancellationToken)
     {
+        //THIS IS NOT A BEST PRACTICE THIS IS A SAMPLE OF MANUAL MAPPING
+        //USE DAPPER IMPLEMENTATION like in GetInventoriesQueryHandler
         var roles = _roleManager.Roles.ToList();
         var mappedQuery = RoleDTO.ToRoleDTOMappedList(roles);
         return Result<IEnumerable<RoleDTO>>.Success(mappedQuery);

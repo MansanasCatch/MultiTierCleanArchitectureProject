@@ -17,6 +17,8 @@ public class GetCategoryQueryHandler : IRequestHandler<GetCategoryQuery, Result<
 
     public async Task<Result<CategoryDTO>> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
     {
+        //THIS IS NOT A BEST PRACTICE THIS IS A SAMPLE OF MANUAL MAPPING
+        //USE DAPPER IMPLEMENTATION like in GetInventoriesQueryHandler
         var category = await _unitOfWork.CategoryRepository.GetByIdAsync(request.CategoryId);
         var mappedQuery = CategoryDTO.ToCategoryDTOMapped(category);
 

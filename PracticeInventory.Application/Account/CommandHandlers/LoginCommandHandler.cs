@@ -19,11 +19,17 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<string>>
     public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByNameAsync(request.Username);
-        if (user != null && await _userManager.CheckPasswordAsync(user, request.Password))
+        if (user is null)
+        {
+            return Result<string>.Failure("User is not exist.");
+        }
+
+        if (await _userManager.CheckPasswordAsync(user, request.Password))
         {
             var token = await _jwtProvider.Generate(user);
             return Result<string>.Success(token);
         }
-        return Result<string>.Failure("Access Denied");
+
+        return Result<string>.Failure("Wrong Passwor");
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Identity;
 using PracticeInventory.Application.Category.Commands;
 using PracticeInventory.Core.Results;
 using PracticeInventory.Domain.Entities;
@@ -17,6 +18,12 @@ public class AddCategoryCommandHandler : IRequestHandler<AddCategoryCommand, Res
 
     public async Task<Result<Guid>> Handle(AddCategoryCommand request, CancellationToken cancellationToken)
     {
+        var isCategoryExist = _unitOfWork.CategoryRepository.FindQueryable(x => x.CategoryName == request.CategoryName);
+        if (isCategoryExist is not null)
+        {
+            return Result<Guid>.Failure("Category Name is already exist.");
+        }
+
         var category = new Categories()
         {
             CategoryId = Guid.NewGuid(),
@@ -24,9 +31,7 @@ public class AddCategoryCommandHandler : IRequestHandler<AddCategoryCommand, Res
         };
         _unitOfWork.CategoryRepository.Add(category);
 
-        var result = await _unitOfWork.CompleteAsync() > 0;
-
-        if (!result) return Result<Guid>.Failure("Failed to add category.");
+        await _unitOfWork.CompleteAsync();
 
         return Result<Guid>.Success(category.CategoryId);
     }

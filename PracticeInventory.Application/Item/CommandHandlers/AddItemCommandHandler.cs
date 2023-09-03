@@ -15,6 +15,12 @@ public class AddItemCommandHandler : IRequestHandler<AddItemCommand, Result<Guid
     }
     public async Task<Result<Guid>> Handle(AddItemCommand request, CancellationToken cancellationToken)
     {
+        var isItemExist = _unitOfWork.ItemRepository.FindQueryable(x => x.ItemName == request.ItemName);
+        if (isItemExist is not null)
+        {
+            return Result<Guid>.Failure("Item Name is already exist.");
+        }
+
         var item = new Items()
         {
             ItemId = Guid.NewGuid(),
@@ -23,9 +29,7 @@ public class AddItemCommandHandler : IRequestHandler<AddItemCommand, Result<Guid
         };
         _unitOfWork.ItemRepository.Add(item);
 
-        var result = await _unitOfWork.CompleteAsync() > 0;
-
-        if (!result) return Result<Guid>.Failure("Failed to add item.");
+        await _unitOfWork.CompleteAsync();
 
         return Result<Guid>.Success(item.ItemId);
     }

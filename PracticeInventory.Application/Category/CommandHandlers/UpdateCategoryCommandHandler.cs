@@ -16,12 +16,21 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
 
     public async Task<Result<Guid>> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
+        var isCategoryExist = _unitOfWork.CategoryRepository.FindQueryable(x => x.CategoryName == request.CategoryName);
+        if (isCategoryExist is not null)
+        {
+            return Result<Guid>.Failure("Category Name is already exist.");
+        }
+
         var findCategory = await _unitOfWork.CategoryRepository.GetByIdAsync(request.CategoryId);
+        if (findCategory is null)
+        {
+            return Result<Guid>.Failure("CategoryId is not exist.");
+        }
+
         findCategory.CategoryName = request.CategoryName;
 
-        var result = await _unitOfWork.CompleteAsync() > 0;
-
-        if (!result) return Result<Guid>.Failure("Failed to update category.");
+        await _unitOfWork.CompleteAsync();
 
         return Result<Guid>.Success(findCategory.CategoryId);
     }
