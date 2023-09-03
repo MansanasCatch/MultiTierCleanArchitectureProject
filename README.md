@@ -32,10 +32,16 @@
 - Change your Database Name to what ever you want to name.
 
   [How to run the application]
+  
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/05c89dc4-3f57-417e-8a58-c2e061118be2)
+
 - Right click on your solution and click properties
 
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/690457ab-f027-4b7e-952b-109787c38e31)
 - Change the startup project to multiple and make API and WebUI as Starting Projects
+
+![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/e5d099c8-6542-4af7-9ad0-2c98263d93ae)
+- Change the Issuer based on the link of your API once you run it check the sample link above
+- Change the Audience based on the link of your WebUI once you run it check the sample link above
 
 
