@@ -44,4 +44,25 @@
 - Change the Issuer based on the link of your API once you run it check the sample link above
 - Change the Audience based on the link of your WebUI once you run it check the sample link above
 
+  [Authorization Role Based and Policy Based]
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/f051a311-6c3e-4b49-a0d1-6119051b3daf)
+
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/466e6557-bdc0-4379-9239-35bec864b089)
+  [Initial Admin User]
+  - Username: JohnDoe@gmail.com
+  - Password: P@ssw0rd
+
+  [API]
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/bf9ffb95-99a4-4ff6-ba03-2a15fc134bca)
+
+  [WebUI]
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/65c7dd6b-64aa-493c-b3e8-2b2073a1d194)
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/74d8ee7d-821d-43bd-9cc2-356a8a15d304)
+
+
+
+ 
+
+
+
 
