@@ -67,6 +67,7 @@
     Initialize: function () {
       $(document).ready(function () {
         scriptManager.EventHandlers();
+        scriptManager.ClientRequest.GetRoles();
         scriptManager.ClientRequest.ValidateToken(true);
       });
     },
@@ -122,7 +123,6 @@
           if (claims.Role == defaultRole.Admin) {
             $(".user-container").removeClass("d-none")
             $(".inventory-container").addClass("d-none")
-            scriptManager.ClientRequest.GetRoles();
             scriptManager.ClientRequest.GetUsers();
           } else if (claims.Role == defaultRole.RegularUser) {
             $(".user-container").addClass("d-none")
