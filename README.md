@@ -44,4 +44,8 @@
 - Change the Issuer based on the link of your API once you run it check the sample link above
 - Change the Audience based on the link of your WebUI once you run it check the sample link above
 
+  [Authorization Role Based and Policy Based]
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/f051a311-6c3e-4b49-a0d1-6119051b3daf)
+
+
 
