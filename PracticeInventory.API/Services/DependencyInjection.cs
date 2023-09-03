@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PracticeInventory.API.Services.Authentication;
+using PracticeInventory.Application.Account.Validator;
 using PracticeInventory.Application.Category.Queries;
 using PracticeInventory.Domain.Interfaces;
 using PracticeInventory.Infrastucture.Authentication;
@@ -60,7 +62,10 @@ public static class DependencyInjection
     }
     public static IServiceCollection AddPresentation(this IServiceCollection services)
     {
-        services.AddControllers();
+        services.AddControllers().AddFluentValidation(config =>
+        {
+            config.RegisterValidatorsFromAssemblyContaining<RegisterCommandValidator>();
+        });
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCategoriesQuery).GetTypeInfo().Assembly));
