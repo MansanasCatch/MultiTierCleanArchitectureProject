@@ -8,7 +8,7 @@ public class RequestManager
 {
     public static void SetTokenCookie(IHttpContextAccessor httpContext, string token)
     {
-        httpContext.HttpContext?.Response.Cookies.Append("token", token, new CookieOptions { Expires = DateTime.Now.AddMinutes(1) });
+        httpContext.HttpContext?.Response.Cookies.Append("token", token, new CookieOptions { Expires = DateTime.Now.AddHours(1) });
     }
     public static string? GetToken(IHttpContextAccessor httpContext)
     {
