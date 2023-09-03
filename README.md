@@ -51,6 +51,16 @@
   [Initial Admin User]
   - Username: JohnDoe@gmail.com
   - Password: P@ssw0rd
+
+  [API]
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/bf9ffb95-99a4-4ff6-ba03-2a15fc134bca)
+
+  [WebUI]
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/65c7dd6b-64aa-493c-b3e8-2b2073a1d194)
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/74d8ee7d-821d-43bd-9cc2-356a8a15d304)
+
+
+
  
 
 
