@@ -47,5 +47,10 @@
   [Authorization Role Based and Policy Based]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/f051a311-6c3e-4b49-a0d1-6119051b3daf)
 
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/466e6557-bdc0-4379-9239-35bec864b089)
+  Username: Default Email
+  Password: Default Password
+
+
 
 
