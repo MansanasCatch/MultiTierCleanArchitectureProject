@@ -15,7 +15,7 @@ public class AddItemCommandHandler : IRequestHandler<AddItemCommand, Result<Guid
     }
     public async Task<Result<Guid>> Handle(AddItemCommand request, CancellationToken cancellationToken)
     {
-        var isItemExist = _unitOfWork.ItemRepository.FindQueryable(x => x.ItemName == request.ItemName);
+        var isItemExist = _unitOfWork.ItemRepository.FindQueryable(x => x.ItemName == request.ItemName).FirstOrDefault();
         if (isItemExist is not null)
         {
             return Result<Guid>.Failure("Item Name is already exist.");

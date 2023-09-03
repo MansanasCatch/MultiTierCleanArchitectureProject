@@ -16,7 +16,7 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
 
     public async Task<Result<Guid>> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
-        var isCategoryExist = _unitOfWork.CategoryRepository.FindQueryable(x => x.CategoryName == request.CategoryName);
+        var isCategoryExist = _unitOfWork.CategoryRepository.FindQueryable(x => x.CategoryName == request.CategoryName).FirstOrDefault();
         if (isCategoryExist is not null)
         {
             return Result<Guid>.Failure("Category Name is already exist.");
