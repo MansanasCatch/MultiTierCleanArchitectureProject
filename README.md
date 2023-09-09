@@ -4,7 +4,14 @@
 
 ![Project_Structure](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/ff6fbf3c-8297-46ff-bdce-e25f5bcb5698)
 
-  [Learnings]
+[Prerequisite]
+- Visual Studio 2022
+- MSSQL 2016 - 2019
+- .NET Core 7
+
+
+
+[Learnings]
 - Developing a 3 Tier Architecture From The Scratch Project
 - Clean Architecture(CA) Project Structure
 - Dependency Injection
@@ -23,7 +30,7 @@
 - Authorization (Role Based, Policy Base and etc)
 - Consuming ASP.NET Web API using ASP.NET Web App via HttpClient Requests
 
-  [How to setup database]
+[How to setup database]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/af34c03f-032c-43ce-bd3c-1182a8a2952a)
 
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/5a928885-603a-48f2-88f7-17a1f5a0f146)
@@ -31,7 +38,7 @@
 - From appsettings.json replace the Server Name, UserId, and Password based on your MSSQL Credentials
 - Change your Database Name to what ever you want to name.
 
-  [How to run the application]
+[How to run the application]
   
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/05c89dc4-3f57-417e-8a58-c2e061118be2)
 
@@ -44,7 +51,7 @@
 - Change the Issuer based on the link of your API once you run it check the sample link above
 - Change the Audience based on the link of your WebUI once you run it check the sample link above
 
-  [Authorization Role Based and Policy Based]
+[Authorization Role Based and Policy Based]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/f051a311-6c3e-4b49-a0d1-6119051b3daf)
 
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/466e6557-bdc0-4379-9239-35bec864b089)
@@ -52,10 +59,10 @@
   - Username: JohnDoe@gmail.com
   - Password: P@ssw0rd
 
-  [API]
+[API]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/bf9ffb95-99a4-4ff6-ba03-2a15fc134bca)
 
-  [WebUI]
+[WebUI]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/65c7dd6b-64aa-493c-b3e8-2b2073a1d194)
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/74d8ee7d-821d-43bd-9cc2-356a8a15d304)
 
