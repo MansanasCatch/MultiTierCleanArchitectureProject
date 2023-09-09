@@ -47,6 +47,8 @@
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/690457ab-f027-4b7e-952b-109787c38e31)
 - Change the startup project to multiple and make API and WebUI as Starting Projects
 
+![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/7854be49-a395-4765-aa32-7d43ca053996)
+
 ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/e5d099c8-6542-4af7-9ad0-2c98263d93ae)
 - Change the Issuer based on the link of your API once you run it check the sample link above
 - Change the Audience based on the link of your WebUI once you run it check the sample link above
