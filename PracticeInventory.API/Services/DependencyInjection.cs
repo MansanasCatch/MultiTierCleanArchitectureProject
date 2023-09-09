@@ -1,4 +1,5 @@
-﻿using FluentValidation.AspNetCore;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -8,11 +9,13 @@ using Microsoft.OpenApi.Models;
 using PracticeInventory.API.Services.Authentication;
 using PracticeInventory.Application.Account.Validator;
 using PracticeInventory.Application.Category.Queries;
+using PracticeInventory.Domain.Enums;
 using PracticeInventory.Domain.Interfaces;
 using PracticeInventory.Infrastucture.Authentication;
 using PracticeInventory.Persistence;
 using PracticeInventory.Persistence.Repositories;
 using PracticeInventory.Persistence.Seeds;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 namespace PracticeInventory.API.Services;
@@ -30,7 +33,7 @@ public static class DependencyInjection
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
-                Title = "VCMS API",
+                Title = "Clean Architecture API",
                 Description = "--"
             });
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -62,10 +65,9 @@ public static class DependencyInjection
     }
     public static IServiceCollection AddPresentation(this IServiceCollection services)
     {
-        services.AddControllers().AddFluentValidation(config =>
-        {
-            config.RegisterValidatorsFromAssemblyContaining<RegisterCommandValidator>();
-        });
+        services.AddFluentValidationAutoValidation();
+        services.AddFluentValidationClientsideAdapters();
+        services.AddValidatorsFromAssemblyContaining<RegisterCommandValidator>();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCategoriesQuery).GetTypeInfo().Assembly));
@@ -81,7 +83,7 @@ public static class DependencyInjection
         });
         services.AddAuthorization(options =>
         {
-            options.AddPolicy("InventoryPolicy", policy => policy.RequireRole("Admin", "RegularUser"));
+            options.AddPolicy("InventoryPolicy", policy => policy.RequireRole(DefaultUserRole.Admin, DefaultUserRole.RegularUser));
         });
         return services;
     }
