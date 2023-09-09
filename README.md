@@ -31,35 +31,39 @@
 - Consuming ASP.NET Web API using ASP.NET Web App via HttpClient Requests
 
 [How to setup database]
+
+- From API > appsettings.json replace the Server Name, UserId, and Password based on your MSSQL Credentials
+- Change your Database Name to what ever you want to name.
+  
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/af34c03f-032c-43ce-bd3c-1182a8a2952a)
 
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/5a928885-603a-48f2-88f7-17a1f5a0f146)
 
-- From appsettings.json replace the Server Name, UserId, and Password based on your MSSQL Credentials
-- Change your Database Name to what ever you want to name.
 
 [How to run the application]
-  
-  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/05c89dc4-3f57-417e-8a58-c2e061118be2)
 
 - Right click on your solution and click properties
-
-  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/690457ab-f027-4b7e-952b-109787c38e31)
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/05c89dc4-3f57-417e-8a58-c2e061118be2)
+  
 - Change the startup project to multiple and make API and WebUI as Starting Projects
+  ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/690457ab-f027-4b7e-952b-109787c38e31)
 
+- From API > appsettings.json Change the Issuer based on the link of your API once you run it check the sample link below
+- From API > appsettings.json Change the Audience based on the link of your WebUI once you run it check the sample link below
 ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/7854be49-a395-4765-aa32-7d43ca053996)
 
 ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/e5d099c8-6542-4af7-9ad0-2c98263d93ae)
-- Change the Issuer based on the link of your API once you run it check the sample link above
-- Change the Audience based on the link of your WebUI once you run it check the sample link above
 
+- From WebUI > appsettings.json Change the ClientBaseAddress > url based on the link of your API once you run it check the sample link above
 ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/616b431a-ed41-4058-af7b-2c0784a0519f)
-- Change the ClientBaseAddress > url based on the link of your API once you run it check the sample link above
+
 
 [Authorization Role Based and Policy Based]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/f051a311-6c3e-4b49-a0d1-6119051b3daf)
 
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/466e6557-bdc0-4379-9239-35bec864b089)
+
+  
   [Initial Admin User]
   - Username: JohnDoe@gmail.com
   - Password: P@ssw0rd
