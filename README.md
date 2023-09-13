@@ -74,11 +74,3 @@
 [WebUI]
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/65c7dd6b-64aa-493c-b3e8-2b2073a1d194)
   ![image](https://github.com/MansanasCatch/CleanArchitectureProject/assets/51433693/74d8ee7d-821d-43bd-9cc2-356a8a15d304)
-
-
-
- 
-
-
-
-
