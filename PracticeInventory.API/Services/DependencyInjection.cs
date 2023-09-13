@@ -15,7 +15,6 @@ using PracticeInventory.Infrastucture.Authentication;
 using PracticeInventory.Persistence;
 using PracticeInventory.Persistence.Repositories;
 using PracticeInventory.Persistence.Seeds;
-using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 namespace PracticeInventory.API.Services;
